@@ -104,7 +104,7 @@ embedding_model_name = "sentence-transformers/all-MiniLM-L6-v2"
 embedder = SentenceTransformer(embedding_model_name)
 
 # 2.2 Initialize the language model (small open-source LM)
-lm_model_name = "distilGPT2"  # or you can use "EleutherAI/gpt-neo-125M"
+lm_model_name = "EleutherAI/gpt-neo-125M"  # distilGPT2 or you can use "EleutherAI/gpt-neo-125M"
 tokenizer = AutoTokenizer.from_pretrained(lm_model_name)
 language_model = AutoModelForCausalLM.from_pretrained(lm_model_name)
 
