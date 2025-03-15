@@ -274,6 +274,7 @@ def main():
     documents = preprocess_apple_data(file_paths)
     print(f"Total chunks created: {len(documents)}")
     build_faiss_index(documents)
+    st.session_state.documents = documents
     st.success("Indexes built successfully.")
 
 
@@ -283,26 +284,26 @@ def main():
     if "documents" not in st.session_state:
         st.session_state.documents = None
 
-    st.subheader("1. Upload Apple Filings (Text Files)")
-    st.write("Upload one or more Apple 10-K/10-Q text files for indexing.")
-    uploaded_files = st.file_uploader("Upload Apple filings (.txt)", type=["txt"], accept_multiple_files=True)
+    # st.subheader("1. Upload Apple Filings (Text Files)")
+    # st.write("Upload one or more Apple 10-K/10-Q text files for indexing.")
+    # uploaded_files = st.file_uploader("Upload Apple filings (.txt)", type=["txt"], accept_multiple_files=True)
 
-    if uploaded_files:
-        file_paths = []
-        for uploaded_file in uploaded_files:
-            temp_path = os.path.join("temp_" + uploaded_file.name)
-            with open(temp_path, "wb") as f:
-                f.write(uploaded_file.read())
-            file_paths.append(temp_path)
+    # if uploaded_files:
+    #     file_paths = []
+    #     for uploaded_file in uploaded_files:
+    #         temp_path = os.path.join("temp_" + uploaded_file.name)
+    #         with open(temp_path, "wb") as f:
+    #             f.write(uploaded_file.read())
+    #         file_paths.append(temp_path)
 
-        if st.button("Build FAISS Index"):
-            documents = preprocess_apple_data(file_paths)
-            st.write(f"Total chunks created: {len(documents)}")
-            build_faiss_index(documents)
-            st.session_state.documents = documents  # store for potential BM25 fallback
-            st.success("FAISS index built successfully.")
+    #     if st.button("Build FAISS Index"):
+    #         documents = preprocess_apple_data(file_paths)
+    #         st.write(f"Total chunks created: {len(documents)}")
+    #         build_faiss_index(documents)
+    #         st.session_state.documents = documents  # store for potential BM25 fallback
+    #         st.success("FAISS index built successfully.")
 
-    st.subheader("2. Ask a Question")
+    st.subheader("1. Ask a Question")
     user_query = st.text_input("Enter your question about Apple's financials")
 
     if st.button("Submit Query"):
