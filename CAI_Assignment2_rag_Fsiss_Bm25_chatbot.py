@@ -126,16 +126,21 @@ def build_faiss_index(documents):
 def retrieve_documents_faiss(query, top_k=3):
     """
     Retrieve top_k relevant document chunks from FAISS using the query.
+    Returns retrieved texts along with their confidence scores.
     """
     global faiss_index, doc_texts
     query_embedding = embedder.encode([query], convert_to_numpy=True)
     distances, indices = faiss_index.search(query_embedding, top_k)
-    
-    # Retrieve corresponding texts (and you could also return metadata)
-    retrieved_texts = [doc_texts[idx] for idx in indices[0]]
-    return retrieved_texts
 
-# Optional: BM25 fallback implementation
+    # Convert distances to similarity scores (higher score is better)
+    confidence_scores = 1 / (1 + distances)
+
+    retrieved_results = [(doc_texts[idx], confidence_scores[0][i]) for i, idx in enumerate(indices[0])]
+    
+    return retrieved_results  # Return a list of tuples (document, confidence score)
+
+
+# BM25 fallback implementation
 
 stop_words = set(stopwords.words('english'))
 ps = PorterStemmer()
@@ -164,6 +169,7 @@ def bm25_score(query_tokens, doc_tokens, avg_doc_len, doc_freqs, total_docs):
 def retrieve_bm25(query, documents, top_k=3):
     query_tokens = tokenize_for_bm25(query)
     all_doc_tokens = [tokenize_for_bm25(doc["text"]) for doc in documents]
+    
     doc_freqs = Counter()
     for dtoks in all_doc_tokens:
         for t in set(dtoks):
@@ -176,9 +182,11 @@ def retrieve_bm25(query, documents, top_k=3):
     for i, dtoks in enumerate(all_doc_tokens):
         score = bm25_score(query_tokens, dtoks, avg_doc_len, doc_freqs, total_docs)
         scores.append((i, score))
-    scores.sort(key=lambda x: x[1], reverse=True)
-    top_indices = [idx for idx, _ in scores[:top_k]]
-    return [documents[i]["text"] for i in top_indices]
+    
+    scores.sort(key=lambda x: x[1], reverse=True)  # Sort by highest score
+    top_results = [(documents[idx]["text"], score) for idx, score in scores[:top_k]]
+    
+    return top_results  # Return (document, confidence score)
 
 ###############################################################################
 # 4. GUARDRAILS & RESPONSE GENERATION
@@ -207,9 +215,8 @@ def generate_response(query, retrieved_docs, conversation_history):
     )
 
     prompt = (
-        f"{history_str}\n"
         f"User: {query}\n\n"
-        f"Relevant Apple Filings:\n{context_str}\n\n"
+        f"Relevant Company Filings:\n{context_str}\n\n"
         f"Assistant:"
     )
 
@@ -217,7 +224,7 @@ def generate_response(query, retrieved_docs, conversation_history):
     with torch.no_grad():
         output_ids = language_model.generate(
             input_ids,
-            max_length=512,
+            max_length=1000,
             temperature=0.7,
             do_sample=True,
             top_p=0.9,
@@ -230,8 +237,32 @@ def generate_response(query, retrieved_docs, conversation_history):
 # 5. UI DEVELOPMENT (STREAMLIT)
 ###############################################################################
 
+import glob
+import os
+
+def get_all_txt_files(folder_path):
+    """
+    Retrieve all .txt file paths from the given folder.
+    """
+    return glob.glob(os.path.join(folder_path, "*.txt"))
+
 def main():
     st.title("Apple Inc. Financial RAG Chatbot with FAISS")
+
+    # Define your folder path
+    folder_path = r"Data"
+
+    # Get all .txt files from the folder
+    file_paths = get_all_txt_files(folder_path)
+
+    # file_paths = []
+    # file_path = r'D:\Study\Code_py\cai\temp_Apple_10K_2022.txt'
+    # file_paths.append(file_path)
+    documents = preprocess_apple_data(file_paths)
+    print(f"Total chunks created: {len(documents)}")
+    build_faiss_index(documents)
+    st.success("Indexes built successfully.")
+
 
     # Initialize session state for conversation and document storage
     if "conversation_history" not in st.session_state:
@@ -267,38 +298,49 @@ def main():
             st.error(msg)
         else:
             # Retrieve documents via FAISS
-            retrieved_docs = retrieve_documents_faiss(user_query, top_k=3)
+            retrieved_docs_with_scores = retrieve_documents_faiss(user_query, top_k=3)
 
-            # If no documents are retrieved, use BM25 as fallback
-            if not retrieved_docs or len(retrieved_docs) == 0:
+            # If FAISS returns no documents, use BM25 as a fallback
+            if not retrieved_docs_with_scores or len(retrieved_docs_with_scores) == 0:
                 st.warning("No documents found with FAISS. Trying BM25 fallback...")
                 if st.session_state.documents:
-                    retrieved_docs = retrieve_bm25(user_query, st.session_state.documents, top_k=3)
+                    retrieved_docs_with_scores = retrieve_bm25(user_query, st.session_state.documents, top_k=3)
                 else:
-                    retrieved_docs = []
+                    retrieved_docs_with_scores = []
 
-            # Generate a response from the language model
-            response_text = generate_response(user_query, retrieved_docs, st.session_state.conversation_history)
+            # Generate response from the language model
+            retrieved_texts = [doc for doc, score in retrieved_docs_with_scores]
+            response_text = generate_response(user_query, retrieved_texts, st.session_state.conversation_history)
             response_text = guardrail_output(response_text)
 
-            # Update conversation history
+            # Store conversation history with confidence scores
             st.session_state.conversation_history.append({
                 "user": user_query,
+                "retrieved_docs": retrieved_docs_with_scores,  # Store docs & scores
                 "assistant": response_text
             })
 
-            st.markdown(f"**Answer:** {response_text}")
+            # Display retrieved documents with confidence scores
+            st.subheader("Retrieved Documents with Confidence Scores:")
+            for i, (doc, score) in enumerate(retrieved_docs_with_scores):
+                st.write(f"**Document {i+1}:**")
+                st.write(f"**Confidence Score:** {score:.4f}")
+                st.write(doc)            
+      
 
+    # Display conversation history with confidence scores
     st.subheader("Conversation History")
     for turn in st.session_state.conversation_history:
         st.write(f"**User:** {turn['user']}")
+        for i, (doc, score) in enumerate(turn['retrieved_docs']):
+            st.write(f"**Retrieved Doc {i+1} Confidence Score:** {score:.4f}")
         st.write(f"**Assistant:** {turn['assistant']}")
 
     st.subheader("3. Testing & Validation")
-    st.write("Examples:")
-    st.write("- What was Apple's net income in fiscal year 2022?")
-    st.write("- How did revenue change over the last quarter?")
-    st.write("- What risk factors are mentioned in the filings?")
+    st.write("Try queries like:")
+    st.write("- 'What is Apple’s revenue for fiscal year 2022?'")
+    st.write("- 'What are the major risk factors mentioned?'")
+    st.write("- 'Who are Apple’s executive officers?' (non-financial but still in the 10-K)")
 
 if __name__ == "__main__":
     main()
