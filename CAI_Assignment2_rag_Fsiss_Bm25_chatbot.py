@@ -16,11 +16,24 @@ import torch
 import faiss
 from collections import Counter
 
+
+import sys
+print(sys.path)
+
+import subprocess
+installed_packages = subprocess.run(["pip", "list"], capture_output=True, text=True)
+print(installed_packages.stdout)
+
+
 # Download NLTK resources (only needed once)
-nltk.data.path = [r'C:\Users\hemam\nltk_data']
-nltk.download('punkt', download_dir=r'C:\Users\hemam\nltk_data')
-nltk.download('punkt_tab', download_dir=r'C:\Users\hemam\nltk_data')
-nltk.download('stopwords', download_dir=r'C:\Users\hemam\nltk_data')
+#nltk.data.path = [r'C:\Users\hemam\nltk_data']
+# nltk.download('punkt', download_dir=r'C:\Users\hemam\nltk_data')
+# nltk.download('punkt_tab', download_dir=r'C:\Users\hemam\nltk_data')
+# nltk.download('stopwords', download_dir=r'C:\Users\hemam\nltk_data')
+
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('stopwords')
 
 ###############################################################################
 # 1. DATA COLLECTION & PREPROCESSING

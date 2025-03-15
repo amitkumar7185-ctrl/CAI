@@ -1,0 +1,8 @@
+streamlit
+nltk
+sentence-transformers
+transformers
+torch
+faiss-cpu
+pandas
+numpy
