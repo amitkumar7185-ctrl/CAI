@@ -1,17 +1,21 @@
 import os
 import re
 import math
-import faiss
-import pdfplumber
 import numpy as np
-from collections import Counter
+import pandas as pd
+import nltk
 from nltk.tokenize import sent_tokenize
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+import streamlit as st
 from sentence_transformers import SentenceTransformer
 from transformers import AutoTokenizer, AutoModelForCausalLM
-import nltk
 import torch
+import faiss
+from collections import Counter
+import pdfplumber
+import subprocess
+import sys
 
 # Cache models and heavy dependencies
 #@st.cache_resource(show_spinner=False)
