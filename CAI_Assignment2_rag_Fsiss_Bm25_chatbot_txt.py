@@ -108,7 +108,7 @@ def preprocess_apple_data(file_paths):
       - "source": the file name it came from
     """
     all_documents = []
-    texts = load_apple_filings_pdf(file_paths)
+    texts = load_apple_filings(file_paths)
     for i, text in enumerate(texts):
         file_name = os.path.basename(file_paths[i])
         chunks = chunk_text(text, chunk_size=250)
@@ -282,7 +282,7 @@ def get_all_txt_files(folder_path):
     """
     Retrieve all .txt file paths from the given folder.
     """
-    return glob.glob(os.path.join(folder_path, "*.pdf"))
+    return glob.glob(os.path.join(folder_path, "*.txt"))
 def load_preprocess_all_file():    
     # Define your folder path
     folder_path = r"Data"
@@ -342,14 +342,6 @@ def main():
         for i, (doc, score) in enumerate(turn['retrieved_docs']):
             st.write(f"**Retrieved Doc {i+1} Confidence Score:** {score:.4f}")
         st.write(f"**Assistant:** {turn['assistant']}")
-
-    # # Display retrieved documents with confidence scores
-    # st.subheader("3.Retrieved Documents with Confidence Scores:")
-    # for i, (doc, score) in enumerate(retrieved_docs_with_scores):
-    #     st.write(f"**Document {i+1}:**")
-    #     st.write(f"**Confidence Score:** {score:.4f}")
-    #     st.write(doc)  
-
 
     st.subheader("3. Testing & Validation")
     st.write("Try queries like:")
