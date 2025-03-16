@@ -17,6 +17,7 @@ import torch
 #@st.cache_resource(show_spinner=False)
 def initialize_dependencies():
     nltk.download('punkt')
+    nltk.download('punkt_tab')
     nltk.download('stopwords')
     embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
     tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neo-125M")
