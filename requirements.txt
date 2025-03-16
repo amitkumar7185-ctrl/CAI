@@ -6,3 +6,4 @@ torch
 faiss-cpu
 pandas
 numpy
+pdfplumber

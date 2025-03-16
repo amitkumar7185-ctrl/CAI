@@ -15,7 +15,7 @@ import torch
 
 import faiss
 from collections import Counter
-
+import pdfplumber
 
 import sys
 print(sys.path)
@@ -51,6 +51,31 @@ def load_apple_filings(file_paths):
             texts.append(text)
     return texts
 
+def load_apple_filings_pdf(file_paths):
+    """
+    Load text and tables from Apple 10-K/10-Q filings in PDF format.
+    Returns a list of texts including extracted tables as text.
+    """
+    texts = []
+    for path in file_paths:
+        all_text = ""
+        with pdfplumber.open(path) as pdf:
+            for page in pdf.pages:
+                # Extract normal text
+                page_text = page.extract_text() or ""
+                all_text += page_text + "\n"
+                
+                # Extract tables
+                tables = page.extract_tables()
+                for table in tables:
+                    table_str = "\n".join(
+                        [" | ".join([cell if cell is not None else "" for cell in row]) for row in table if row]
+                    )
+                    all_text += "\n[Extracted Table]\n" + table_str + "\n"
+                    
+        texts.append(all_text)
+    return texts
+
 def chunk_text(text, chunk_size=250):
     """
     Splits text into smaller chunks (by sentence) with a maximum of ~chunk_size tokens.   
@@ -83,10 +108,10 @@ def preprocess_apple_data(file_paths):
       - "source": the file name it came from
     """
     all_documents = []
-    texts = load_apple_filings(file_paths)
+    texts = load_apple_filings_pdf(file_paths)
     for i, text in enumerate(texts):
         file_name = os.path.basename(file_paths[i])
-        chunks = chunk_text(text, chunk_size=200)
+        chunks = chunk_text(text, chunk_size=250)
         for c in chunks:
             if len(c.strip()) > 0:
                 all_documents.append({
@@ -237,7 +262,7 @@ def generate_response(query, retrieved_docs, conversation_history):
     with torch.no_grad():
         output_ids = language_model.generate(
             input_ids,
-            max_length=1000,
+            max_length=1500,
             temperature=0.7,
             do_sample=True,
             top_p=0.9,
@@ -257,100 +282,105 @@ def get_all_txt_files(folder_path):
     """
     Retrieve all .txt file paths from the given folder.
     """
-    return glob.glob(os.path.join(folder_path, "*.txt"))
-
-def main():
-    st.title("Apple Inc. Financial RAG Chatbot with FAISS")
-
+    return glob.glob(os.path.join(folder_path, "*.pdf"))
+def load_preprocess_all_file():    
     # Define your folder path
     folder_path = r"Data"
-
     # Get all .txt files from the folder
-    file_paths = get_all_txt_files(folder_path)
+    file_paths = get_all_txt_files(folder_path)  
+    preprocess_and_index(file_paths)
 
-    # file_paths = []
-    # file_path = r'D:\Study\Code_py\cai\temp_Apple_10K_2022.txt'
-    # file_paths.append(file_path)
+    # documents = preprocess_apple_data(file_paths)
+    # print(f"Total chunks created: {len(documents)}")
+    # build_faiss_index(documents)
+    # st.session_state.documents = documents
+    # st.success("Indexes built successfully.")
+
+def preprocess_and_index(file_paths, index_path="faiss_index.index"):
     documents = preprocess_apple_data(file_paths)
     print(f"Total chunks created: {len(documents)}")
-    build_faiss_index(documents)
-    st.session_state.documents = documents
-    st.success("Indexes built successfully.")
+    
+    if os.path.exists(index_path):
+        st.success(f"Index already exists at {index_path}. Skipping index creation.")
+        # Optionally, you can load the existing index here if needed
+        # index = faiss.read_index(index_path)
+    else:
+        print("Building new FAISS index...")
+        build_faiss_index(documents)
+        st.session_state.documents = documents
+        st.success("Indexes built successfully.")
+
+def initialize_app():
+    if "initialized" not in st.session_state:
+        # Load & preprocess only once
+        folder_path = r"Data"
+        file_paths = get_all_txt_files(folder_path)
+        documents = preprocess_apple_data(file_paths)
+        build_faiss_index(documents)
+        st.session_state.documents = documents
+        st.session_state.initialized = True
+        st.success("Documents loaded & FAISS index built.")
+    else:
+        st.info("Using existing FAISS index & documents.")
 
 
-    # Initialize session state for conversation and document storage
-    if "conversation_history" not in st.session_state:
-        st.session_state.conversation_history = []
-    if "documents" not in st.session_state:
-        st.session_state.documents = None
 
-    # st.subheader("1. Upload Apple Filings (Text Files)")
-    # st.write("Upload one or more Apple 10-K/10-Q text files for indexing.")
-    # uploaded_files = st.file_uploader("Upload Apple filings (.txt)", type=["txt"], accept_multiple_files=True)
 
-    # if uploaded_files:
-    #     file_paths = []
-    #     for uploaded_file in uploaded_files:
-    #         temp_path = os.path.join("temp_" + uploaded_file.name)
-    #         with open(temp_path, "wb") as f:
-    #             f.write(uploaded_file.read())
-    #         file_paths.append(temp_path)
+def handle_query(user_query):
+    is_valid, msg = guardrail_input(user_query)
+    if not is_valid:
+        st.error(msg)
+        return
 
-    #     if st.button("Build FAISS Index"):
-    #         documents = preprocess_apple_data(file_paths)
-    #         st.write(f"Total chunks created: {len(documents)}")
-    #         build_faiss_index(documents)
-    #         st.session_state.documents = documents  # store for potential BM25 fallback
-    #         st.success("FAISS index built successfully.")
+    retrieved_docs_with_scores = retrieve_documents_faiss(user_query, top_k=3)
+    if not retrieved_docs_with_scores:
+        st.warning("No documents from FAISS. Trying BM25...")
+        retrieved_docs_with_scores = retrieve_bm25(user_query, st.session_state.documents, top_k=3)
 
-    st.subheader("1. Ask a Question")
-    user_query = st.text_input("Enter your question about Apple's financials")
+    retrieved_texts = [doc for doc, _ in retrieved_docs_with_scores]
+    response_text = generate_response(user_query, retrieved_texts, st.session_state.conversation_history)
+    response_text = guardrail_output(response_text)
 
-    if st.button("Submit Query"):
-        is_valid, msg = guardrail_input(user_query)
-        if not is_valid:
-            st.error(msg)
-        else:
-            # Retrieve documents via FAISS
-            retrieved_docs_with_scores = retrieve_documents_faiss(user_query, top_k=3)
+    st.session_state.conversation_history.append({
+        "user": user_query,
+        "retrieved_docs": retrieved_docs_with_scores,
+        "assistant": response_text
+    })
 
-            # If FAISS returns no documents, use BM25 as a fallback
-            if not retrieved_docs_with_scores or len(retrieved_docs_with_scores) == 0:
-                st.warning("No documents found with FAISS. Trying BM25 fallback...")
-                if st.session_state.documents:
-                    retrieved_docs_with_scores = retrieve_bm25(user_query, st.session_state.documents, top_k=3)
-                else:
-                    retrieved_docs_with_scores = []
-
-            # Generate response from the language model
-            retrieved_texts = [doc for doc, score in retrieved_docs_with_scores]
-            response_text = generate_response(user_query, retrieved_texts, st.session_state.conversation_history)
-            response_text = guardrail_output(response_text)
-
-            # Store conversation history with confidence scores
-            st.session_state.conversation_history.append({
-                "user": user_query,
-                "retrieved_docs": retrieved_docs_with_scores,  # Store docs & scores
-                "assistant": response_text
-            })
-
-            # Display retrieved documents with confidence scores
-            st.subheader("Retrieved Documents with Confidence Scores:")
-            for i, (doc, score) in enumerate(retrieved_docs_with_scores):
-                st.write(f"**Document {i+1}:**")
-                st.write(f"**Confidence Score:** {score:.4f}")
-                st.write(doc)            
-      
-
-    # Display conversation history with confidence scores
+def display_history():
     st.subheader("Conversation History")
     for turn in st.session_state.conversation_history:
         st.write(f"**User:** {turn['user']}")
         for i, (doc, score) in enumerate(turn['retrieved_docs']):
-            st.write(f"**Retrieved Doc {i+1} Confidence Score:** {score:.4f}")
+            st.write(f"**Doc {i+1} Score:** {score:.4f}")
         st.write(f"**Assistant:** {turn['assistant']}")
 
-    st.subheader("3. Testing & Validation")
+
+
+
+
+
+
+
+def main():
+    st.title("Apple Inc. Financial RAG Chatbot with FAISS")
+    #st.title("Apple Inc. Financial RAG Chatbot")
+
+    # Initialize backend ONCE
+    initialize_app()
+
+    # --- UI Logic ---
+    if "conversation_history" not in st.session_state:
+        st.session_state.conversation_history = []
+
+    user_query = st.text_input("Enter your question about Apple's financials")
+    if st.button("Submit Query"):
+        handle_query(user_query)
+
+    # Display conversation history
+    display_history()
+
+    st.subheader("Testing & Validation")
     st.write("Try queries like:")
     st.write("- 'What is Apple’s revenue for fiscal year 2022?'")
     st.write("- 'What are the major risk factors mentioned?'")

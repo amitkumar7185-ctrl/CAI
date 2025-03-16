@@ -1,0 +1,169 @@
+FORM 10-K
+
+For the fiscal year ended September 30, 2023
+
+Apple Inc.
+
+California (State of incorporation)
+
+I.R.S. Employer Identification No.: 94-2404110
+
+Address: One Apple Park Way, Cupertino, California 95014
+
+Telephone: (408) 996-1010
+
+Securities Registered:
+
+Common Stock (AAPL) - Nasdaq
+
+1.375% Notes due 2024 - Nasdaq
+
+0.000% Notes due 2025 - Nasdaq
+
+0.875% Notes due 2025 - Nasdaq
+
+1.625% Notes due 2026 - Nasdaq
+
+2.000% Notes due 2027 - Nasdaq
+
+1.375% Notes due 2029 - Nasdaq
+
+3.050% Notes due 2029 - Nasdaq
+
+0.500% Notes due 2031 - Nasdaq
+
+3.600% Notes due 2042 - Nasdaq
+
+Business Overview
+
+Company Background
+
+Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, accessories, and related services. The fiscal year is the 52- or 53-week period ending on the last Saturday of September.
+
+Products
+
+iPhone: iOS smartphones (iPhone 15 Pro, iPhone 15, iPhone 14, iPhone 13, iPhone SE)
+
+Mac: macOS personal computers (MacBook Air, MacBook Pro, iMac, Mac mini, Mac Studio, Mac Pro)
+
+iPad: iPadOS tablets (iPad Pro, iPad Air, iPad, iPad mini)
+
+Wearables, Home, and Accessories:
+
+Apple Watch (Ultra 2, Series 9, SE)
+
+AirPods (AirPods, AirPods Pro, AirPods Max, Beats)
+
+Apple TV, HomePod, HomePod mini
+
+Apple-branded and third-party accessories
+
+Services
+
+Advertising: Licensing and Apple’s own ad platforms.
+
+AppleCare: Paid service and support offerings.
+
+Cloud Services: Cross-device cloud storage.
+
+Digital Content: App Store, Apple Arcade, Apple Fitness+, Apple Music, Apple News+, Apple TV+.
+
+Payment Services: Apple Card and Apple Pay.
+
+Segments
+
+Americas: North and South America
+
+Europe: Including India, Middle East, Africa
+
+Greater China: China mainland, Hong Kong, Taiwan
+
+Japan
+
+Rest of Asia Pacific: Includes Australia
+
+Markets and Distribution
+
+Customers include consumers, SMBs, education, enterprise, and government markets. Sales channels: direct (retail and online) and indirect (carriers, wholesalers, resellers).
+
+Competition
+
+Apple competes globally with companies emphasizing pricing, product features, ecosystem, design, and service.
+
+Supply Chain
+
+Some components are single-source.
+
+Custom components often used.
+
+Supply chain risks include shortages and pricing fluctuations.
+
+Research and Development
+
+Apple focuses on continual innovation via R&D, IP licensing, and acquisitions.
+
+Intellectual Property
+
+Apple owns a wide range of patents, trademarks, copyrights, and designs globally.
+
+Business Seasonality
+
+Sales peak in Q1 due to holiday demand.
+
+Human Capital
+
+Approx. 161,000 full-time employees (as of Sept 30, 2023)
+
+Focus on diversity, inclusion, and safety
+
+Item 1A. Risk Factors
+
+Macroeconomic Risks
+
+Global economic conditions (inflation, recession, interest rates)
+
+International operations and supply chain exposure
+
+Adverse impacts on demand and supply
+
+Geopolitical & Environmental Risks
+
+Political disputes, trade restrictions, wars, natural disasters, public health crises
+
+Regulatory barriers in key markets (e.g., U.S.-China tensions)
+
+Competitive Risks
+
+Aggressive pricing, short product life cycles, evolving standards
+
+Competitors may imitate Apple or sell at low/no profit
+
+Product & Supply Chain Risks
+
+Single-source suppliers for key components
+
+Custom component constraints
+
+Delays and shortages impact production
+
+Legal and Compliance Risks
+
+Antitrust scrutiny globally
+
+Increasing regulations on data privacy, labor, environment, etc.
+
+Pending legislation (e.g., EU Digital Markets Act)
+
+Financial Risks
+
+Fluctuating foreign exchange rates
+
+Dependence on iPhone as key revenue driver
+
+Gross margin volatility
+
+Exposure to credit risk from resellers and suppliers
+
+Forward-Looking Statements
+
+Statements regarding future performance, risks, and uncertainties.

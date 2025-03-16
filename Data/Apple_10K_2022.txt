@@ -2,108 +2,68 @@ UNITED STATES
 SECURITIES AND EXCHANGE COMMISSION
 Washington, D.C. 20549
 FORM 10-K
-(Mark One)
-☒ ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
+
+ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
 For the fiscal year ended September 30, 2023
 or
-☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
+TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
 For the transition period from to .
 Commission File Number: 001-36743
+(Address of principal executive offices)
 Apple Inc.
-(Exact name of Registrant as specified in its charter)
 California 94-2404110
-(State or other jurisdiction
-of incorporation or organization)
-(I.R.S. Employer Identification No.)
 One Apple Park Way
 Cupertino, California 95014
-(Address of principal executive offices) (Zip Code)
+(Zip Code)
 (408) 996-1010
+
 (Registrant’s telephone number, including area code)
 Securities registered pursuant to Section 12(b) of the Act:
-Title of each class
-Trading
-symbol(s) Name of each exchange on which registered
-Common Stock, $0.00001 par value per share AAPL The Nasdaq Stock Market LLC
-1.375% Notes due 2024 — The Nasdaq Stock Market LLC
-0.000% Notes due 2025 — The Nasdaq Stock Market LLC
-0.875% Notes due 2025 — The Nasdaq Stock Market LLC
-1.625% Notes due 2026 — The Nasdaq Stock Market LLC
-2.000% Notes due 2027 — The Nasdaq Stock Market LLC
-1.375% Notes due 2029 — The Nasdaq Stock Market LLC
-3.050% Notes due 2029 — The Nasdaq Stock Market LLC
-0.500% Notes due 2031 — The Nasdaq Stock Market LLC
-3.600% Notes due 2042 — The Nasdaq Stock Market LLC
-Securities registered pursuant to Section 12(g) of the Act: None
-Indicate by check mark if the Registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act.
-Yes ☒ No ☐
-Indicate by check mark if the Registrant is not required to file reports pursuant to Section 13 or Section 15(d) of the Act.
-Yes ☐ No ☒
-Indicate by check mark whether the Registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the
-preceding 12 months (or for such shorter period that the Registrant was required to file such reports), and (2) has been subject to such filing requirements for the
-past 90 days.
-Yes ☒ No ☐
-Indicate by check mark whether the Registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation
-S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the Registrant was required to submit such files).
-Yes ☒ No ☐
-Indicate by check mark whether the Registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging
-growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and “emerging growth company” in Rule 12b-2 of the
-Exchange Act.
-Large accelerated filer ☒ Accelerated filer ☐
-Non-accelerated filer ☐ Smaller reporting company ☐
-Emerging growth company ☐
-If an emerging growth company, indicate by check mark if the Registrant has elected not to use the extended transition period for complying with any new or revised
-financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐
-Indicate by check mark whether the Registrant has filed a report on and attestation to its management’s assessment of the effectiveness of its internal control over
-financial reporting under Section 404(b) of the Sarbanes-Oxley Act (15 U.S.C. 7262(b)) by the registered public accounting firm that prepared or issued its audit
-report. ☒
-If securities are registered pursuant to Section 12(b) of the Act, indicate by check mark whether the financial statements of the registrant included in the filing reflect
-the correction of an error to previously issued financial statements. ☐
-Indicate by check mark whether any of those error corrections are restatements that required a recovery analysis of incentive-based compensation received by any
-of the registrant’s executive officers during the relevant recovery period pursuant to §240.10D-1(b). ☐
-Indicate by check mark whether the Registrant is a shell company (as defined in Rule 12b-2 of the Act).
-Yes ☐ No ☒
+
+Common Stock, $0.00001 par value per share
+Trading symbol: AAPL
+Exchange: The Nasdaq Stock Market LLC
+
+1.375% Notes due 2024
+Exchange: The Nasdaq Stock Market LLC
+
+0.000% Notes due 2025
+Exchange: The Nasdaq Stock Market LLC
+
+0.875% Notes due 2025
+Exchange: The Nasdaq Stock Market LLC
+
+1.625% Notes due 2026
+Exchange: The Nasdaq Stock Market LLC
+
+2.000% Notes due 2027
+Exchange: The Nasdaq Stock Market LLC
+
+1.375% Notes due 2029
+Exchange: The Nasdaq Stock Market LLC
+
+3.050% Notes due 2029
+Exchange: The Nasdaq Stock Market LLC
+
+0.500% Notes due 2031
+Exchange: The Nasdaq Stock Market LLC
+
+3.600% Notes due 2042
+Exchange: The Nasdaq Stock Market LLC
+
 The aggregate market value of the voting and non-voting stock held by non-affiliates of the Registrant, as of March 31, 2023, the last business day of the Registrant’s
 most recently completed second fiscal quarter, was approximately $2,591,165,000,000. Solely for purposes of this disclosure, shares of common stock held by
 executive officers and directors of the Registrant as of such date have been excluded because such persons may be deemed to be affiliates. This determination of
 executive officers and directors as affiliates is not necessarily a conclusive determination for any other purposes.
+
 15,552,752,000 shares of common stock were issued and outstanding as of October 20, 2023.
+
 DOCUMENTS INCORPORATED BY REFERENCE
 Portions of the Registrant’s definitive proxy statement relating to its 2024 annual meeting of shareholders are incorporated by reference into Part III of this Annual
 Report on Form 10-K where indicated. The Registrant’s definitive proxy statement will be filed with the U.S. Securities and Exchange Commission within 120 days
 after the end of the fiscal year to which this report relates.
-Apple Inc.
-Form 10-K
-For the Fiscal Year Ended September 30, 2023
-TABLE OF CONTENTS
-Page
-Part I
-Item 1. Business 1
-Item 1A. Risk Factors 5
-Item 1B. Unresolved Staff Comments 16
-Item 1C. Cybersecurity 16
-Item 2. Properties 17
-Item 3. Legal Proceedings 17
-Item 4. Mine Safety Disclosures 17
-Part II
-Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 18
-Item 6. [Reserved] 19
-Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 20
-Item 7A. Quantitative and Qualitative Disclosures About Market Risk 26
-Item 8. Financial Statements and Supplementary Data 27
-Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 52
-Item 9A. Controls and Procedures 52
-Item 9B. Other Information 53
-Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 53
-Part III
-Item 10. Directors, Executive Officers and Corporate Governance 53
-Item 11. Executive Compensation 53
-Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 53
-Item 13. Certain Relationships and Related Transactions, and Director Independence 53
-Item 14. Principal Accountant Fees and Services 53
-Part IV
-Item 15. Exhibit and Financial Statement Schedules 54
-Item 16. Form 10-K Summary 57
+
+
 This Annual Report on Form 10-K (“Form 10-K”) contains forward-looking statements, within the meaning of the Private Securities Litigation
 Reform Act of 1995, that involve risks and uncertainties. Many of the forward-looking statements are located in Part I, Item 1 of this Form 10-K
 under the heading “Business” and Part II, Item 7 of this Form 10-K under the heading “Management’s Discussion and Analysis of Financial
@@ -115,25 +75,29 @@ Forward-looking statements can also be identified by words such as “future,”
 Company’s actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such
 differences include, but are not limited to, those discussed in Part I, Item 1A of this Form 10-K under the heading “Risk Factors.” The Company
 assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
+
 Unless otherwise stated, all information presented herein is based on the Company’s fiscal calendar, and references to particular years, quarters,
 months or periods refer to the Company’s fiscal years ended in September and the associated quarters, months and periods of those fiscal years.
 Each of the terms the “Company” and “Apple” as used herein refers collectively to Apple Inc. and its wholly owned subsidiaries, unless otherwise
 stated.
-PART I
-Item 1. Business
+
 Company Background
 The Company designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of
 related services. The Company’s fiscal year is the 52- or 53-week period that ends on the last Saturday of September.
+Business
 Products
 iPhone
 iPhone is the Company’s line of smartphones based on its iOS operating system. The iPhone line includes iPhone 15 Pro, iPhone 15, iPhone 14,
 iPhone 13 and iPhone SE .
+
 Mac
 Mac is the Company’s line of personal computers based on its macOS operating system. The Mac line includes laptops MacBook Air and
 MacBook Pro , as well as desktops iMac , Mac mini , Mac Studio and Mac Pro .
+
 iPad
 iPad is the Company’s line of multipurpose tablets based on its iPadOS operating system. The iPad line includes iPad Pro , iPad Air , iPad and
 iPad mini .
+
 Wearables, Home and Accessories
 Wearables includes smartwatches and wireless headphones. The Company’s line of smartwatches, based on its watchOS operating system,
 includes Apple Watch Ultra™ 2, Apple Watch Series 9 and Apple Watch SE . The Company’s line of wireless headphones includes AirPods ,
@@ -141,36 +105,30 @@ AirPods Pro , AirPods Max™ and Beats products.
 Home includes Apple TV , the Company’s media streaming and gaming device based on its tvOS operating system, and HomePod and
 HomePod mini , high-fidelity wireless smart speakers.
 Accessories includes Apple-branded and third-party accessories.
-®
-®
-® ® ®
-® ® ® ® ®
-® ® ® ®
-®
-®
-® ® ®
-® ®
-® ® ®
-®
-Apple Inc. | 2023 Form 10-K | 1
+
 Services
 Advertising
 The Company’s advertising services include third-party licensing arrangements and the Company’s own advertising platforms.
+
 AppleCare
 The Company offers a portfolio of fee-based service and support products under the AppleCare brand. The offerings provide priority access to
 Apple technical support, access to the global Apple authorized service network for repair and replacement services, and in many cases additional
 coverage for instances of accidental damage or theft and loss, depending on the country and type of product.
+
 Cloud Services
 The Company’s cloud services store and keep customers’ content up-to-date and available across multiple Apple devices and Windows personal
 computers.
+
 Digital Content
 The Company operates various platforms, including the App Store , that allow customers to discover and download applications and digital
 content, such as books, music, video, games and podcasts.
 The Company also offers digital content through subscription-based services, including Apple Arcade , a game subscription service; Apple
 Fitness+ , a personalized fitness service; Apple Music , which offers users a curated listening experience with on-demand radio stations; Apple
 News+ , a subscription news and magazine service; and Apple TV+ , which offers exclusive original content and live sports.
+
 Payment Services
 The Company offers payment services, including Apple Card , a co-branded credit card, and Apple Pay , a cashless payment service.
+
 Segments
 The Company manages its business primarily on a geographic basis. The Company’s reportable segments consist of the Americas, Europe,
 Greater China, Japan and Rest of Asia Pacific. Americas includes both North and South America. Europe includes European countries, as well as
@@ -178,25 +136,20 @@ India, the Middle East and Africa. Greater China includes China mainland, Hong K
 those Asian countries not included in the Company’s other reportable segments. Although the reportable segments provide similar hardware and
 software products and similar services, each one is managed separately to better align with the location of the Company’s customers and
 distribution partners and the unique market dynamics of each geographic region.
+
 Markets and Distribution
 The Company’s customers are primarily in the consumer, small and mid-sized business, education, enterprise and government markets. The
 Company sells its products and resells third-party products in most of its major markets directly to customers through its retail and online stores
 and its direct sales force. The Company also employs a variety of indirect distribution channels, such as third-party cellular network carriers,
 wholesalers, retailers and resellers. During 2023, the Company’s net sales through its direct and indirect distribution channels accounted for 37%
 and 63%, respectively, of total net sales.
+
 Competition
 The markets for the Company’s products and services are highly competitive, and are characterized by aggressive price competition and resulting
 downward pressure on gross margins, frequent introduction of new products and services, short product life cycles, evolving industry standards,
 continual improvement in product price and performance characteristics, rapid adoption of technological advancements by competitors, and price
 sensitivity on the part of consumers and businesses. Many of the Company’s competitors seek to compete primarily through aggressive pricing
 and very low cost structures, and by imitating the Company’s products and infringing on its intellectual property.
-®
-®
-®
-SM ®
-® ®
-® ®
-Apple Inc. | 2023 Form 10-K | 2
 The Company’s ability to compete successfully depends heavily on ensuring the continuing and timely introduction of innovative new products,
 services and technologies to the marketplace. The Company designs and develops nearly the entire solution for its products, including the
 hardware, operating system, numerous software applications and related services. Principal competitive factors important to the Company include
@@ -212,6 +165,7 @@ or cost structures to provide products at little or no profit or even at a loss.
 content to users for free and use illegitimate means to obtain third-party digital content and applications. The Company faces significant
 competition as competitors imitate the Company’s product features and applications within their products, or collaborate to offer integrated
 solutions that are more competitive than those they currently offer.
+
 Supply of Components
 Although most components essential to the Company’s business are generally available from multiple sources, certain components are currently
 obtained from single or limited sources. The Company also competes for various components with other participants in the markets for
@@ -224,11 +178,13 @@ acceptable prices, or at all, may be affected if suppliers decide to concentrate
 customized to meet the Company’s requirements.
 The Company has entered into agreements for the supply of many components; however, there can be no guarantee that the Company will be
 able to extend or renew these agreements on similar terms, or at all.
+
 Research and Development
 Because the industries in which the Company competes are characterized by rapid technological advances, the Company’s ability to compete
 successfully depends heavily upon its ability to ensure a continual and timely flow of competitive products, services and technologies to the
 marketplace. The Company continues to develop new technologies to enhance existing products and services, and to expand the range of its
 offerings through research and development (“R&D”), licensing of intellectual property and acquisition of third-party businesses and technology.
+
 Intellectual Property
 The Company currently holds a broad collection of intellectual property rights relating to certain aspects of its hardware devices, accessories,
 software and services. This includes patents, designs, copyrights, trademarks and other forms of intellectual property rights in the U.S. and various
@@ -244,38 +200,44 @@ In addition to Company-owned intellectual property, many of the Company’s prod
 owned by third parties. It may be necessary in the future to seek or renew licenses relating to various aspects of the Company’s products,
 processes and services. While the Company has generally been able to obtain such licenses on commercially reasonable terms in the past, there
 is no guarantee that such licenses could be obtained in the future on reasonable terms or at all.
-Apple Inc. | 2023 Form 10-K | 3
+
 Business Seasonality and Product Introductions
 The Company has historically experienced higher net sales in its first quarter compared to other quarters in its fiscal year due in part to seasonal
 holiday demand. Additionally, new product and service introductions can significantly impact net sales, cost of sales and operating expenses. The
 timing of product introductions can also impact the Company’s net sales to its indirect distribution channels as these channels are filled with new
 inventory following a product launch, and channel inventory of an older product often declines as the launch of a newer product approaches. Net
 sales can also be affected when consumers and distributors anticipate a product introduction.
+
 Human Capital
 The Company believes it has a talented, motivated and dedicated team, and works to create an inclusive, safe and supportive environment for all
 of its team members. As of September 30, 2023, the Company had approximately 161,000 full-time equivalent employees.
 Workplace Practices and Policies
 The Company is an equal opportunity employer committed to inclusion and diversity and to providing a workplace free of harassment or
 discrimination.
+
 Compensation and Benefits
 The Company believes that compensation should be competitive and equitable, and should enable employees to share in the Company’s success.
 The Company recognizes its people are most likely to thrive when they have the resources to meet their needs and the time and support to
 succeed in their professional and personal lives. In support of this, the Company offers a wide variety of benefits for employees around the world
 and invests in tools and resources that are designed to support employees’ individual growth and development.
+
 Inclusion and Diversity
 The Company is committed to its vision to build and sustain a more inclusive workforce that is representative of the communities it serves. The
 Company continues to work to increase diverse representation at every level, foster an inclusive culture, and support equitable pay and access to
 opportunity for all employees.
+
 Engagement
 The Company believes that open and honest communication among team members, managers and leaders helps create an open, collaborative
 work environment where everyone can contribute, grow and succeed. Team members are encouraged to come to their managers with questions,
 feedback or concerns, and the Company conducts surveys that gauge employee sentiment in areas like career development, manager
 performance and inclusivity.
+
 Health and Safety
 The Company is committed to protecting its team members everywhere it operates. The Company identifies potential workplace risks in order to
 develop measures to mitigate possible hazards. The Company supports employees with general safety, security and crisis management training,
 and by putting specific programs in place for those working in potentially high-hazard environments. Additionally, the Company works to protect the
 safety and security of its team members, visitors and customers through its global security team.
+
 Available Information
 The Company’s Annual Reports on Form 10-K, Quarterly Reports on Form 10-Q, Current Reports on Form 8-K, and amendments to reports filed
 pursuant to Sections 13(a) and 15(d) of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), are filed with the U.S. Securities
@@ -285,7 +247,8 @@ provides certain information for investors on its corporate website, www.apple.c
 includes press releases and other information about financial performance, information on environmental, social and governance matters, and
 details related to the Company’s annual meeting of shareholders. The information contained on the websites referenced in this Form 10-K is not
 incorporated by reference into this filing. Further, the Company’s references to website URLs are intended to be inactive textual references only.
-Apple Inc. | 2023 Form 10-K | 4
+
+
 Item 1A. Risk Factors
 The Company’s business, reputation, results of operations, financial condition and stock price can be affected by a number of factors, whether
 currently known or unknown, including those described below. When any one or more of these risks materialize from time to time, the Company’s
@@ -296,6 +259,7 @@ results or trends in future periods. This discussion of risk factors contains fo
 This section should be read in conjunction with Part II, Item 7, “Management’s Discussion and Analysis of Financial Condition and Results of
 Operations” and the consolidated financial statements and accompanying notes in Part II, Item 8, “Financial Statements and Supplementary Data”
 of this Form 10-K.
+
 Macroeconomic and Industry Risks
 The Company’s operations and performance depend significantly on global and regional economic conditions and adverse economic
 conditions can materially adversely affect the Company’s business, results of operations and financial condition.
@@ -321,7 +285,7 @@ Political events, trade and other international disputes, war, terrorism, natura
 business interruptions can harm or disrupt international commerce and the global economy, and could have a material adverse effect on the
 Company and its customers, suppliers, contract manufacturers, logistics providers, distributors, cellular network carriers and other channel
 partners.
-Apple Inc. | 2023 Form 10-K | 5
+
 The Company has a large, global business with sales outside the U.S. representing a majority of the Company’s total net sales, and the Company
 believes that it generally benefits from growth in international trade. Substantially all of the Company’s manufacturing is performed in whole or in
 part by outsourcing partners located primarily in China mainland, India, Japan, South Korea, Taiwan and Vietnam. Restrictions on international
@@ -369,7 +333,7 @@ services and technologies to the marketplace. The Company designs and develops n
 hardware, operating system, numerous software applications and related services. As a result, the Company must make significant investments in
 R&D. There can be no assurance these investments will achieve expected returns, and the Company may not be able to develop and market new
 products and services successfully.
-Apple Inc. | 2023 Form 10-K | 6
+
 The Company currently holds a significant number of patents, trademarks and copyrights and has registered, and applied to register, additional
 patents, trademarks and copyrights. In contrast, many of the Company’s competitors seek to compete primarily through aggressive pricing and
 very low cost structures, and by imitating the Company’s products and infringing on its intellectual property. Effective intellectual property
@@ -392,6 +356,7 @@ Company also competes with illegitimate means to obtain third-party digital cont
 The Company’s business, results of operations and financial condition depend substantially on the Company’s ability to continually improve its
 products and services to maintain their functional and design advantages. There can be no assurance the Company will be able to continue to
 provide products and services that compete effectively.
+
 Business Risks
 To remain competitive and stimulate customer demand, the Company must successfully manage frequent introductions and transitions
 of products and services.
@@ -417,7 +382,7 @@ product defect expense reimbursement, the Company generally remains responsible 
 the event of product defects and experiences unanticipated product defect liabilities from time to time. While the Company relies on its partners to
 adhere to its supplier code of conduct, violations of the supplier code of conduct occur from time to time and can materially adversely affect the
 Company’s business, reputation, results of operations and financial condition.
-Apple Inc. | 2023 Form 10-K | 7
+
 The Company relies on single-source outsourcing partners in the U.S., Asia and Europe to supply and manufacture many components, and on
 outsourcing partners primarily located in Asia, for final assembly of substantially all of the Company’s hardware products. Any failure of these
 partners to perform can have a negative impact on the Company’s cost or supply of components or finished goods. In addition, manufacturing or
@@ -468,7 +433,7 @@ exposed to product liability claims, recalls, product replacements or modificati
 intangible assets, and significant warranty and other expenses, including litigation costs and regulatory fines. Quality problems can also adversely
 affect the experience for users of the Company’s products and services, and result in harm to the Company’s reputation, loss of competitive
 advantage, poor market acceptance, reduced demand for products and services, delay in new product and service introductions and lost sales.
-Apple Inc. | 2023 Form 10-K | 8
+
 The Company is exposed to the risk of write-downs on the value of its inventory and other assets, in addition to purchase commitment
 cancellation risk.
 The Company records a write-down for product and component inventories that have become obsolete or exceed anticipated demand, or for
@@ -557,7 +522,7 @@ of its major markets directly to consumers, small and mid-sized businesses, and 
 and online stores and its direct sales force.
 Some carriers providing cellular network service for the Company’s products offer financing, installment payment plans or subsidies for users’
 purchases of the device. There can be no assurance such offers will be continued at all or in the same amounts.
-Apple Inc. | 2023 Form 10-K | 10
+
 The Company has invested and will continue to invest in programs to enhance reseller sales, including staffing selected resellers’ stores with
 Company employees and contractors, and improving product placement displays. These programs can require a substantial investment while not
 assuring return or incremental sales. The financial condition of these resellers could weaken, these resellers could stop distributing the Company’s
@@ -606,7 +571,7 @@ unusual activity and may freeze accounts under suspicious circumstances, which, 
 orders or impede customer access to the Company’s products and services.
 While the Company maintains insurance coverage that is intended to address certain aspects of data security risks, such insurance coverage may
 be insufficient to cover all losses or all types of claims that may arise.
-Apple Inc. | 2023 Form 10-K | 11
+
 Investment in new business strategies and acquisitions could disrupt the Company’s ongoing business, present risks not originally
 contemplated and materially adversely affect the Company’s business, reputation, results of operations and financial condition.
 The Company has invested, and in the future may invest, in new business strategies or acquisitions. Such endeavors may involve significant risks
@@ -623,6 +588,7 @@ business, results of operations and financial condition, including macroeconomic
 Other factors include the Company’s ability to: manage costs associated with retail store construction and operation; manage relationships with
 existing retail partners; manage costs associated with fluctuations in the value of retail inventory; and obtain and renew leases in quality retail
 locations at a reasonable cost.
+
 Legal and Regulatory Compliance Risks
 The Company’s business, results of operations and financial condition could be adversely impacted by unfavorable results of legal
 proceedings or government investigations.
@@ -653,7 +619,7 @@ certain products and services, all of which could materially adversely affect th
 condition.
 While the Company maintains insurance coverage for certain types of claims, such insurance coverage may be insufficient to cover all losses or all
 types of claims that may arise.
-Apple Inc. | 2023 Form 10-K | 12
+
 The Company is subject to complex and changing laws and regulations worldwide, which exposes the Company to potential liabilities,
 increased costs and other adverse effects on the Company’s business.
 The Company’s global operations are subject to complex and changing laws and regulations on subjects, including antitrust; privacy, data security
@@ -699,7 +665,7 @@ similar laws in other jurisdictions. Changes have included how developers commun
 alternative purchasing mechanisms. Future changes could also affect what the Company charges developers for access to its platforms, how it
 manages distribution of apps outside of the App Store, and how and to what extent it allows developers to communicate with consumers inside the
 App Store regarding alternative purchasing mechanisms.
-Apple Inc. | 2023 Form 10-K | 13
+
 The Company is also currently subject to antitrust investigations in various jurisdictions around the world, which can result in legal proceedings
 and claims against the Company that could, individually or in the aggregate, have a materially adverse impact on the Company’s business, results
 of operations and financial condition. For example, the Company is the subject of investigations in Europe and other jurisdictions relating to App
@@ -743,7 +709,7 @@ compromised, the Company can be liable for associated investigatory expenses and
 follow payment card industry data security standards. The Company could also experience a significant increase in payment card transaction
 costs or lose the ability to process payment cards if it fails to follow payment card industry data security standards, which could materially
 adversely affect the Company’s business, reputation, results of operations and financial condition.
-Apple Inc. | 2023 Form 10-K | 14
+
 Financial Risks
 The Company expects its quarterly net sales and results of operations to fluctuate.
 The Company’s profit margins vary across its products, services, geographic segments and distribution channels. For example, the gross margins
@@ -786,7 +752,7 @@ conditions, political risk, sovereign risk, interest rate fluctuations or other 
 equivalents and marketable securities may fluctuate substantially. Therefore, although the Company has not realized any significant losses on its
 cash, cash equivalents and marketable securities, future fluctuations in their value could result in significant losses and could have a material
 adverse impact on the Company’s results of operations and financial condition.
-Apple Inc. | 2023 Form 10-K | 15
+
 The Company is exposed to credit risk on its trade accounts receivable, vendor non-trade receivables and prepayments related to longterm supply agreements, and this risk is heightened during periods when economic conditions worsen.
 The Company distributes its products and certain of its services through third-party cellular network carriers, wholesalers, retailers and resellers.
 The Company also sells its products and services directly to small and mid-sized businesses and education, enterprise and government
@@ -814,6 +780,7 @@ authorities and governmental bodies. The Company regularly assesses the likeliho
 determine the adequacy of its provision for taxes. There can be no assurance as to the outcome of these examinations. If the Company’s effective
 tax rates were to increase, or if the ultimate determination of the Company’s taxes owed is for an amount in excess of amounts previously
 accrued, the Company’s business, results of operations and financial condition could be materially adversely affected.
+
 General Risks
 The price of the Company’s stock is subject to volatility.
 The Company’s stock has experienced substantial price volatility in the past and may continue to do so in the future. Additionally, the Company,
@@ -826,16 +793,13 @@ consummated. Future dividends are subject to declaration by the Company’s Boar
 does not obligate it to acquire any specific number of shares. If the Company fails to meet expectations related to future growth, profitability,
 dividends, share repurchases or other market expectations, the price of the Company’s stock may decline significantly, which could have a
 material adverse impact on investor confidence and employee retention.
-Item 1B. Unresolved Staff Comments
-None.
-Item 1C. Cybersecurity
-Not applicable.
-Apple Inc. | 2023 Form 10-K | 16
+
 Item 2. Properties
 The Company’s headquarters is located in Cupertino, California. As of September 30, 2023, the Company owned or leased facilities and land for
 corporate functions, R&D, data centers, retail and other purposes at locations throughout the U.S. and in various places outside the U.S. The
 Company believes its existing facilities and equipment, which are used by all reportable segments, are in good operating condition and are
 suitable for the conduct of its business.
+
 Item 3. Legal Proceedings
 Epic Games
 Epic Games, Inc. (“Epic”) filed a lawsuit in the U.S. District Court for the Northern District of California (the “District Court”) against the Company
@@ -848,6 +812,7 @@ mechanisms other than Apple in-app purchasing. The injunction applies to apps on
 Epic filed petitions with the Circuit Court requesting further review of the decision. On June 30, 2023, the Circuit Court denied both petitions. On
 July 17, 2023, the Circuit Court granted Apple’s motion to stay enforcement of the injunction pending appeal to the U.S. Supreme Court. If the U.S.
 Supreme Court denies Apple’s petition, the stay of the injunction will expire.
+
 Masimo
 Masimo Corporation and Cercacor Laboratories, Inc. (together, “Masimo”) filed a complaint before the U.S. International Trade Commission (the
 “ITC”) alleging infringement by the Company of five patents relating to the functionality of the blood oxygen feature in Apple Watch Series 6 and 7.
@@ -856,51 +821,54 @@ include blood oxygen sensing functionality. On October 26, 2023, the ITC entered
 and sales in the United States of Apple Watch models with blood oxygen sensing functionality, which includes Apple Watch Series 9 and Ultra 2.
 The Order will not go into effect until the end of the administrative review period, which is currently expected to end on December 25, 2023. The
 Company intends to appeal the Order and seek a stay pending the appeal.
+
 Other Legal Proceedings
 The Company is subject to other legal proceedings and claims that have not been fully resolved and that have arisen in the ordinary course of
 business. The Company settled certain matters during the fourth quarter of 2023 that did not individually or in the aggregate have a material
 impact on the Company’s financial condition or operating results. The outcome of litigation is inherently uncertain. If one or more legal matters
 were resolved against the Company in a reporting period for amounts above management’s expectations, the Company’s financial condition and
 operating results for that reporting period could be materially adversely affected.
-Item 4. Mine Safety Disclosures
-Not applicable.
-Apple Inc. | 2023 Form 10-K | 17
+
 PART II
 Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
 The Company’s common stock is traded on The Nasdaq Stock Market LLC under the symbol AAPL.
+
 Holders
 As of October 20, 2023, there were 23,763 shareholders of record.
+
 Purchases of Equity Securities by the Issuer and Affiliated Purchasers
 Share repurchase activity during the three months ended September 30, 2023 was as follows (in millions, except number of shares, which are
 reflected in thousands, and per-share amounts):
-Periods
-Total Number
-of Shares
-Purchased
-Average
-Price
-Paid Per
-Share
-Total Number of
-Shares
-Purchased as Part
-of Publicly
-Announced Plans
-or Programs
-Approximate Dollar
-Value of
-Shares That May Yet
-Be Purchased
-Under the Plans or
-Programs
+
+Periods:
 July 2, 2023 to August 5, 2023:
-Open market and privately negotiated purchases 33,864 $ 191.62 33,864
+
+Open market and privately negotiated purchases
+Total Number of Shares Purchased: 33,864
+Average Price Paid Per Share: $191.62
+Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs: 33,864
+Approximate Dollar Value of Shares That May Yet Be Purchased Under the Plans or Programs: N/A
 August 6, 2023 to September 2, 2023:
-August 2023 ASRs 22,085 22,085
-Open market and privately negotiated purchases 30,299 $ 178.99 30,299
+
+August 2023 ASRs
+Total Number of Shares Purchased: 22,085 (2)
+Average Price Paid Per Share: (2)
+Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs: 22,085 (2)
+Open market and privately negotiated purchases
+Total Number of Shares Purchased: 30,299
+Average Price Paid Per Share: $178.99
+Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs: 30,299
 September 3, 2023 to September 30, 2023:
-Open market and privately negotiated purchases 20,347 $ 176.31 20,347
-Total 106,595 $ 74,069
+
+Open market and privately negotiated purchases
+Total Number of Shares Purchased: 20,347
+Average Price Paid Per Share: $176.31
+Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs: 20,347
+Total for the Quarter:
+Total Number of Shares Purchased: 106,595
+Approximate Dollar Value of Shares That May Yet Be Purchased Under the Plans or Programs: $74,069
+
+
 (1) As of September 30, 2023, the Company was authorized by the Board of Directors to purchase up to $90 billion of the Company’s common
 stock under a share repurchase program announced on May 4, 2023, of which $15.9 billion had been utilized. During the fourth quarter of 2023,
 the Company also utilized the final $4.6 billion under its previous repurchase program, which was most recently authorized in April 2022. The
@@ -911,41 +879,30 @@ institutions committed to deliver shares of the Company’s common stock during 
 $5.0 billion. The total number of shares ultimately delivered under the ASRs, and therefore the average repurchase price paid per share, is
 determined based on the volume-weighted average price of the Company’s common stock during the ASRs’ purchase periods, which end in the
 first quarter of 2024.
-(1)
-(2) (2) (2)
-Apple Inc. | 2023 Form 10-K | 18
+
 Company Stock Performance
 The following graph shows a comparison of five-year cumulative total shareholder return, calculated on a dividend-reinvested basis, for the
 Company, the S&P 500 Index and the Dow Jones U.S. Technology Supersector Index. The graph assumes $100 was invested in each of the
 Company’s common stock, the S&P 500 Index and the Dow Jones U.S. Technology Supersector Index as of the market close on September 28,
 2018. Past stock price performance is not necessarily indicative of future stock price performance.
-September
-2018
-September
-2019
-September
-2020
-September
-2021
-September
-2022
-September
-2023
-Apple Inc. $ 100 $ 98 $ 204 $ 269 $ 277 $ 317
-S&P 500 Index $ 100 $ 104 $ 118 $ 161 $ 136 $ 160
-Dow Jones U.S. Technology Supersector Index $ 100 $ 105 $ 154 $ 227 $ 164 $ 226
-Item 6. [Reserved]
-Apple Inc. | 2023 Form 10-K | 19
+
+Apple Inc.                          September 2018   $100   September 2019   $98   September 2020   $204   September 2021   $269   September 2022   $277   September 2023   $317
+S&P 500 Index                       September 2018   $100   September 2019  $104   September 2020   $118   September 2021   $161   September 2022   $136   September 2023   $160
+Dow Jones U.S. Technology 
+Supersector Index                   September 2018   $100   September 2019  $105   September 2020   $154   September 2021   $227   September 2022   $164   September 2023   $226
+
 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations
 The following discussion should be read in conjunction with the consolidated financial statements and accompanying notes included in Part II, Item
 8 of this Form 10-K. This Item generally discusses 2023 and 2022 items and year-to-year comparisons between 2023 and 2022. Discussions of
 2021 items and year-to-year comparisons between 2022 and 2021 are not included, and can be found in “Management’s Discussion and Analysis
 of Financial Condition and Results of Operations” in Part II, Item 7 of the Company’s Annual Report on Form 10-K for the fiscal year ended
 September 24, 2022.
+
 Fiscal Period
 The Company’s fiscal year is the 52- or 53-week period that ends on the last Saturday of September. An additional week is included in the first
 fiscal quarter every five or six years to realign the Company’s fiscal quarters with calendar quarters, which occurred in the first quarter of 2023. The
 Company’s fiscal year 2023 spanned 53 weeks, whereas fiscal years 2022 and 2021 spanned 52 weeks each.
+
 Fiscal Year Highlights
 The Company’s total net sales were $383.3 billion and net income was $97.0 billion during 2023.
 The Company’s total net sales decreased 3% or $11.0 billion during 2023 compared to 2022. The weakness in foreign currencies relative to the
@@ -953,24 +910,29 @@ U.S. dollar accounted for more than the entire year-over-year decrease in total 
 iPhone, partially offset by higher net sales of Services.
 The Company announces new product, service and software offerings at various times during the year. Significant announcements during fiscal
 year 2023 included the following:
+
 First Quarter 2023:
 • iPad and iPad Pro;
 • Next-generation Apple TV 4K; and
 • MLS Season Pass, a Major League Soccer subscription streaming service.
+
 Second Quarter 2023:
 • MacBook Pro 14”, MacBook Pro 16” and Mac mini; and
 • Second-generation HomePod.
+
 Third Quarter 2023:
 • MacBook Air 15”, Mac Studio and Mac Pro;
 • Apple Vision Pro™, the Company’s first spatial computer featuring its new visionOS™, expected to be available in early calendar year
 2024; and
 • iOS 17, macOS Sonoma, iPadOS 17, tvOS 17 and watchOS 10, updates to the Company’s operating systems.
+
 Fourth Quarter 2023:
 • iPhone 15, iPhone 15 Plus, iPhone 15 Pro and iPhone 15 Pro Max; and
 • Apple Watch Series 9 and Apple Watch Ultra 2.
 In May 2023, the Company announced a new share repurchase program of up to $90 billion and raised its quarterly dividend from $0.23 to $0.24
 per share beginning in May 2023. During 2023, the Company repurchased $76.6 billion of its common stock and paid dividends and dividend
 equivalents of $15.0 billion.
+
 Macroeconomic Conditions
 Macroeconomic conditions, including inflation, changes in interest rates, and currency fluctuations, have directly and indirectly impacted, and could
 in the future materially impact, the Company’s results of operations and financial condition.
