@@ -1,3 +1,6 @@
+###############################################################################
+# IMPORTS
+###############################################################################
 import os
 import re
 import math
@@ -8,41 +11,38 @@ from nltk.tokenize import sent_tokenize
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import streamlit as st
-
 from sentence_transformers import SentenceTransformer
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
-
 import faiss
 from collections import Counter
 import pdfplumber
-
 import sys
+import glob
+import os
+
+
 print(sys.path)
 
-#import subprocess
-# installed_packages = subprocess.run(["pip", "list"], capture_output=True, text=True)
-# print(installed_packages.stdout)
-
-
-# Download NLTK resources (only needed once)
-#nltk.data.path = [r'C:\Users\hemam\nltk_data']
-# nltk.download('punkt', download_dir=r'C:\Users\hemam\nltk_data')
-# nltk.download('punkt_tab', download_dir=r'C:\Users\hemam\nltk_data')
-# nltk.download('stopwords', download_dir=r'C:\Users\hemam\nltk_data')
-
+###############################################################################
+# DOWNLOAD NLTK DATASETS
+###############################################################################
+# Download tokenization and stopword datasets for text processing
 nltk.download('punkt')
 nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 ###############################################################################
-# 1. DATA COLLECTION & PREPROCESSING
+# DATA COLLECTION & PREPROCESSING
 ###############################################################################
 
 def load_apple_filings(file_paths):
     """
-    Load text from Apple 10-K/10-Q filings provided as file paths.
-    Returns a list of texts.
+    Load plain text Apple financial filings (.txt files).    
+    Args:
+        file_paths (list): List of file paths to text documents.
+    Returns:
+        list: List of text strings from the loaded files.
     """
     texts = []
     for path in file_paths:
@@ -53,8 +53,11 @@ def load_apple_filings(file_paths):
 
 def load_apple_filings_pdf(file_paths):
     """
-    Load text and tables from Apple 10-K/10-Q filings in PDF format.
-    Returns a list of texts including extracted tables as text.
+    Load PDF Apple financial filings and extract both text and tables.
+    Args:
+        file_paths (list): List of file paths to PDF documents.
+    Returns:
+        list: List of extracted text and tables as strings.
     """
     texts = []
     for path in file_paths:
@@ -78,7 +81,14 @@ def load_apple_filings_pdf(file_paths):
 
 def chunk_text(text, chunk_size=250):
     """
-    Splits text into smaller chunks (by sentence) with a maximum of ~chunk_size tokens.   
+    Chunk large texts into smaller parts (~chunk_size words each).
+
+    Args:
+        text (str): The input text to be chunked.
+        chunk_size (int): Approximate maximum words per chunk.
+
+    Returns:
+        list: List of text chunks.
     """
     sentences = sent_tokenize(text)
     chunks = []
@@ -101,11 +111,11 @@ def chunk_text(text, chunk_size=250):
 
 def preprocess_apple_data(file_paths):
     """
-    Reads Apple filings from given file paths, chunks them,
-    and returns a list of document dictionaries.
-    Each dictionary contains:
-      - "text": the chunk text
-      - "source": the file name it came from
+    End-to-end preprocessing: Load PDFs, chunk them, and prepare metadata.
+    Args:
+        file_paths (list): List of PDF paths.
+    Returns:
+        list: List of dicts with 'text' and 'source' (file name).
     """
     all_documents = []
     texts = load_apple_filings_pdf(file_paths)
@@ -121,28 +131,30 @@ def preprocess_apple_data(file_paths):
     return all_documents
 
 ###############################################################################
-# 2. SETUP EMBEDDING MODEL, LANGUAGE MODEL & FAISS INDEX
+# SETUP EMBEDDING MODEL, LANGUAGE MODEL & FAISS INDEX
 ###############################################################################
 
-# 2.1 Initialize the embedding model
+# Initialize the embedding model
 embedding_model_name = "sentence-transformers/all-MiniLM-L6-v2"
 embedder = SentenceTransformer(embedding_model_name)
 
-# 2.2 Initialize the language model (small open-source LM)
+# Initialize the language model (small open-source LM)
 lm_model_name = "EleutherAI/gpt-neo-125M"  # distilGPT2 or you can use "EleutherAI/gpt-neo-125M"
 tokenizer = AutoTokenizer.from_pretrained(lm_model_name)
 language_model = AutoModelForCausalLM.from_pretrained(lm_model_name)
 
-# 2.3 Global variables to store FAISS index and document texts
+# Global variables to store FAISS index and document texts
 faiss_index = None
 doc_texts = []  # list of chunk texts
 doc_metadatas = []  # corresponding metadata (e.g., source)
 
 def build_faiss_index(documents):
     """
-    Build a FAISS index from the document chunks.
-    This function creates the embeddings for each document chunk,
-    builds the index, and stores global variables for retrieval.
+    Build FAISS index for semantic search over the document chunks.
+    Args:
+        documents (list): Preprocessed document chunks.
+    Returns:
+        faiss.IndexFlatL2: FAISS index object.
     """
     global faiss_index, doc_texts, doc_metadatas
 
@@ -158,13 +170,20 @@ def build_faiss_index(documents):
     return faiss_index
 
 ###############################################################################
-# 3. ADVANCED RETRIEVAL IMPLEMENTATION (WITH FAISS & Optional BM25)
+# ADVANCED RETRIEVAL IMPLEMENTATION (WITH FAISS & Optional BM25)
 ###############################################################################
 
 def retrieve_documents_faiss(query, top_k=3):
     """
     Retrieve top_k relevant document chunks from FAISS using the query.
     Returns retrieved texts along with their confidence scores.
+
+    Args:
+        query (str): User query.
+        top_k (int): Number of top documents to retrieve.
+
+    Returns:
+        list: Retrieved (document_text, score) tuples.
     """
     global faiss_index, doc_texts
     query_embedding = embedder.encode([query], convert_to_numpy=True)
@@ -189,6 +208,9 @@ def tokenize_for_bm25(text):
     return tokens
 
 def bm25_score(query_tokens, doc_tokens, avg_doc_len, doc_freqs, total_docs):
+    """
+    Calculate BM25 score between query and a document.
+    """
     k1 = 1.5
     b = 0.75
     score = 0.0
@@ -205,6 +227,17 @@ def bm25_score(query_tokens, doc_tokens, avg_doc_len, doc_freqs, total_docs):
     return score
 
 def retrieve_bm25(query, documents, top_k=3):
+    """
+    Retrieve top_k documents using BM25 when FAISS fails.
+
+    Args:
+        query (str): User query.
+        documents (list): Document corpus.
+        top_k (int): Number of documents to retrieve.
+
+    Returns:
+        list: Retrieved (document_text, score) tuples.
+    """
     query_tokens = tokenize_for_bm25(query)
     all_doc_tokens = [tokenize_for_bm25(doc["text"]) for doc in documents]
     
@@ -227,10 +260,15 @@ def retrieve_bm25(query, documents, top_k=3):
     return top_results  # Return (document, confidence score)
 
 ###############################################################################
-# 4. GUARDRAILS & RESPONSE GENERATION
+# GUARDRAILS & RESPONSE GENERATION
 ###############################################################################
 
 def guardrail_input(user_input):
+    """
+    Validate input query to ensure it's safe and appropriate.
+    Returns:
+        tuple: (bool for valid input, error message if any)
+    """
     if not user_input or len(user_input.strip()) == 0:
         return False, "Query cannot be empty."
     if len(user_input) > 1000:
@@ -238,15 +276,24 @@ def guardrail_input(user_input):
     return True, ""
 
 def guardrail_output(response_text):
+    """
+    Add guardrails to model output if needed.
+    """
     if "I am not sure" in response_text:
         return "[Guardrail] The model seems uncertain. Please verify the response."
     return response_text
 
 def generate_response(query, retrieved_docs, conversation_history):
     """
-    Generate a response using the small language model.
-    The prompt includes (optionally) a small conversation history and the retrieved context.
+    Generate response from the language model using retrieved context.
+    Args:
+        query (str): User query.
+        retrieved_docs (list): Retrieved chunks.
+        conversation_history (list): Past conversation turns.
+    Returns:
+        str: Generated response text.
     """
+
     context_str = "\n\n".join(retrieved_docs)
     history_str = "\n".join(
         [f"User: {turn['user']}\nAssistant: {turn['assistant']}" for turn in conversation_history[-3:]]
@@ -272,18 +319,18 @@ def generate_response(query, retrieved_docs, conversation_history):
     return output_text.strip()
 
 ###############################################################################
-# 5. UI DEVELOPMENT (STREAMLIT)
+# UI DEVELOPMENT (STREAMLIT)
 ###############################################################################
-
-import glob
-import os
 
 def get_all_txt_files(folder_path):
     """
-    Retrieve all .txt file paths from the given folder.
+    Retrieve all .pdf file paths from the given folder.
     """
     return glob.glob(os.path.join(folder_path, "*.pdf"))
-def load_preprocess_all_file():    
+def load_preprocess_all_file():   
+    """
+    Load and preprocess all PDFs in 'Data' folder and build the FAISS index.
+    """ 
     # Define your folder path
     folder_path = r"Data"
     # Get all .txt files from the folder
@@ -296,7 +343,7 @@ def load_preprocess_all_file():
 
 
 def main():
-    st.title("Apple Inc. Financial RAG Chatbot with FAISS")
+    st.title("Financial RAG Chatbot with FAISS")
     load_preprocess_all_file()
     # Initialize session state for conversation and document storage
     if "conversation_history" not in st.session_state:
